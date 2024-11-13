@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 public interface OrderItemService {
 
-    Response addOrderItem(OrderRequest orderRequest);
+    Response addOrderItems(OrderRequest orderRequest);
 
     Response updateOrderItemStatus(Long orderItemId, String status);
 
