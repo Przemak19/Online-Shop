@@ -1,10 +1,12 @@
 package project.onlineshop.mapper;
 
+import org.springframework.stereotype.Component;
 import project.onlineshop.dto.*;
 import project.onlineshop.entity.*;
 
 import java.util.stream.Collectors;
 
+@Component
 public class EntityDtoMapper {
 
     public UserDto mapUserToDtoBasic(User user){
@@ -51,7 +53,7 @@ public class EntityDtoMapper {
         return orderItemDto;
     }
 
-    public ItemDto mapProductToDtoBasic(Item item){
+    public ItemDto mapItemToDtoBasic(Item item){
         ItemDto itemDto = new ItemDto();
 
         itemDto.setId(item.getId());
@@ -78,7 +80,7 @@ public class EntityDtoMapper {
         OrderItemDto orderItemDto = mapOrderItemToDtoBasic(orderItem);
 
         if (orderItem.getItem() != null) {
-            ItemDto productDto = mapProductToDtoBasic(orderItem.getItem());
+            ItemDto productDto = mapItemToDtoBasic(orderItem.getItem());
             orderItemDto.setItem(productDto);
         }
 
