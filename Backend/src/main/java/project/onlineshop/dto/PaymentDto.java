@@ -2,6 +2,7 @@ package project.onlineshop.dto;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -9,7 +10,7 @@ public class PaymentDto {
 
     private Long Id;
 
-    private Double amount;
+    private BigDecimal amount;
     private String method;
     private String status;
 

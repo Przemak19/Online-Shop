@@ -73,7 +73,7 @@ public class CategoryServiceImpl implements CategoryService {
                 .map(entityDtoMapper::mapCategoryToDtoBasic)
                 .toList();
 
-        log.info("Found {} categories", categories.size());
+        log.info("Found categories");
 
         return Response.builder()
                 .status(200)

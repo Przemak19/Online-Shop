@@ -5,6 +5,7 @@ import lombok.Data;
 import project.onlineshop.entity.enums.PaymentMethod;
 import project.onlineshop.entity.enums.PaymentStatus;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,7 +17,7 @@ public class Payment {
     @GeneratedValue
     private Long Id;
 
-    private Double amount;
+    private BigDecimal amount;
     private PaymentMethod method;
     private PaymentStatus status;
 

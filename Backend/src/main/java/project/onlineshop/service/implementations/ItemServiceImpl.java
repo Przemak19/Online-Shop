@@ -16,6 +16,7 @@ import project.onlineshop.repository.ItemRepository;
 import project.onlineshop.service.AwsS3Service;
 import project.onlineshop.service.interfaces.ItemService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -30,7 +31,7 @@ public class ItemServiceImpl implements ItemService {
 
 
     @Override
-    public Response createItem(Long categoryId, MultipartFile image, String name, String description, Double price) {
+    public Response createItem(Long categoryId, MultipartFile image, String name, String description, BigDecimal price) {
         Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new NotFoundException("Category not found"));
 
         String imageUrl = awsS3Service.saveImageToS3Bucket(image);
@@ -52,7 +53,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Response updateItem(Long itemId, Long categoryId, MultipartFile image, String name, String description, Double price) {
+    public Response updateItem(Long itemId, Long categoryId, MultipartFile image, String name, String description, BigDecimal price) {
         Item item = itemRepository.findById(itemId).orElseThrow(() -> new NotFoundException("Item not found"));
 
         Category category = null;
@@ -112,7 +113,7 @@ public class ItemServiceImpl implements ItemService {
                 .map(entityDtoMapper::mapItemToDtoBasic)
                 .toList();
 
-        log.info("Found {} items", itemList.size());
+        log.info("Found items");
 
         return Response.builder()
                 .status(200)
@@ -132,7 +133,7 @@ public class ItemServiceImpl implements ItemService {
                         .map(entityDtoMapper::mapItemToDtoBasic)
                                 .toList();
 
-        log.info("Found {} items by category", itemList.size());
+        log.info("Found items by category");
 
         return Response.builder()
                 .status(200)
@@ -152,7 +153,7 @@ public class ItemServiceImpl implements ItemService {
                 .map(entityDtoMapper::mapItemToDtoBasic)
                 .toList();
 
-        log.info("Found {} items by keyword {}", itemList.size(), keyword);
+        log.info("Found items by keyword {}", keyword);
 
         return Response.builder()
                 .status(200)

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import project.onlineshop.entity.enums.OrderStatus;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,7 +17,7 @@ public class OrderItem {
     private Long Id;
 
     private int quantity;
-    private Double price;
+    private BigDecimal price;
     private OrderStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -3,6 +3,7 @@ package project.onlineshop.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -17,7 +18,7 @@ public class Item {
     private String name;
     private String description;
     private String imageUrl;
-    private Double price;
+    private BigDecimal price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")

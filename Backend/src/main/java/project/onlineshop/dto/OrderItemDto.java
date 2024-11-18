@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -18,7 +19,7 @@ public class OrderItemDto {
     private Long Id;
 
     private int quantity;
-    private Double price;
+    private BigDecimal price;
     private String status;
 
     private UserDto user;

@@ -114,7 +114,7 @@ public class UserServiceImpl implements UserService {
 
         UserDto userDto = entityDtoMapper.mapUserToDtoPlusAddressAndOrderHistory(user);
 
-        log.info("Found {} items in order history", userDto.getOrderItemList().size());
+        log.info("Found items in order history");
 
         return Response.builder()
                 .status(200)

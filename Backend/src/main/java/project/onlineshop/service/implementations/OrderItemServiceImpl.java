@@ -23,6 +23,7 @@ import project.onlineshop.repository.specifications.OrderItemSpecification;
 import project.onlineshop.service.interfaces.OrderItemService;
 import project.onlineshop.service.interfaces.UserService;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -49,16 +50,15 @@ public class OrderItemServiceImpl implements OrderItemService {
 
             orderItem.setItem(item);
             orderItem.setUser(user);
-            orderItem.setPrice(orderItem.getPrice() * orderItemRequest.getQuantity());
+            orderItem.setPrice(item.getPrice().multiply(BigDecimal.valueOf(orderItemRequest.getQuantity())));
             orderItem.setStatus(OrderStatus.PENDING);
             orderItem.setQuantity(orderItemRequest.getQuantity());
 
             return orderItem;
         }).toList();
 
-        Double totalPrice = (orderRequest.getPrice() != null && orderRequest.getPrice() > 0)
-                ? orderRequest.getPrice()
-                : orderItems.stream().mapToDouble(OrderItem::getPrice).sum();
+        BigDecimal totalPrice = orderRequest.getPrice() != null && orderRequest.getPrice().compareTo(BigDecimal.ZERO) > 0
+                ? orderRequest.getPrice() : orderItems.stream().map(OrderItem::getPrice).reduce(BigDecimal.ZERO, BigDecimal::add);
 
         Order order = new Order();
 
@@ -108,7 +108,7 @@ public class OrderItemServiceImpl implements OrderItemService {
                 .map(entityDtoMapper::mapOrderItemToDtoPlusProductAndUser)
                 .toList();
 
-        log.info("Found {} order items", orderItemDtoList.size());
+        log.info("Found order items");
 
         return Response.builder()
                 .status(200)

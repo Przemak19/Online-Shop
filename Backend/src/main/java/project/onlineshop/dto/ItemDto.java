@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class ItemDto {
     private String name;
     private String description;
     private String imageUrl;
-    private Double price;
+    private BigDecimal price;
 
     private CategoryDto category;
 }

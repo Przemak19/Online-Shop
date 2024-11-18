@@ -2,6 +2,7 @@ package project.onlineshop.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,6 +26,7 @@ public class JWTService {
     @Value("${secretJwtString}")
     private String secretJwtString;
 
+    @PostConstruct
     private void init() {
         byte[] keyBytes = secretJwtString.getBytes(StandardCharsets.UTF_8);
         this.secretKey = new SecretKeySpec(keyBytes, "HmacSHA256");
