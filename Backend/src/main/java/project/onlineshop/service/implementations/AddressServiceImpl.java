@@ -8,6 +8,7 @@ import project.onlineshop.dto.Response;
 import project.onlineshop.entity.Address;
 import project.onlineshop.entity.User;
 import project.onlineshop.repository.AddressRepository;
+import project.onlineshop.repository.UserRepository;
 import project.onlineshop.service.interfaces.AddressService;
 import project.onlineshop.service.interfaces.UserService;
 
@@ -17,6 +18,7 @@ import project.onlineshop.service.interfaces.UserService;
 public class AddressServiceImpl implements AddressService {
 
     private final AddressRepository addressRepository;
+    private final UserRepository userRepository;
     private final UserService userService;
 
     @Override
@@ -35,7 +37,10 @@ public class AddressServiceImpl implements AddressService {
         if(addressDto.getStreet() != null) address.setStreet(addressDto.getStreet());
         if(addressDto.getZipcode() != null) address.setZipcode(addressDto.getZipcode());
 
+        user.setAddress(address);
+
         addressRepository.save(address);
+        userRepository.save(user);
 
         log.info("{} address saved", user.getEmail());
 

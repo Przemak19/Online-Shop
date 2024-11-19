@@ -20,4 +20,6 @@ public interface ItemService {
     Response getAllItemsByCategoryId(Long categoryId);
 
     Response searchItems(String keyword);
+
+    Response getItemByProductId(Long productId);
 }

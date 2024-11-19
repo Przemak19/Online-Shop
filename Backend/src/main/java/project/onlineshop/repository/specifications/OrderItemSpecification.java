@@ -29,6 +29,6 @@ public class OrderItemSpecification {
 
     public static Specification<OrderItem> hasItemId(Long itemId) {
         return ((root, query, criteriaBuilder) ->
-                itemId != null ? criteriaBuilder.equal(root.get("itemId"), itemId) : null);
+                itemId != null ? criteriaBuilder.equal(root.get("id"), itemId) : null);
     }
 }

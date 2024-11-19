@@ -46,7 +46,7 @@ public class ItemController {
         return ResponseEntity.ok(itemService.updateItem(itemId, categoryId, image, name, description, price));
     }
 
-    @PostMapping("/delete/{itemId}")
+    @DeleteMapping("/delete/{itemId}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> deleteItem(@PathVariable Long itemId) {
 
@@ -57,6 +57,18 @@ public class ItemController {
     public ResponseEntity<Response> getItems(@PathVariable Long categoryId) {
 
         return ResponseEntity.ok(itemService.getAllItemsByCategoryId(categoryId));
+    }
+
+    @GetMapping("/get-all-items")
+    public ResponseEntity<Response> getAllItems() {
+
+        return ResponseEntity.ok(itemService.getAllItems());
+    }
+
+    @GetMapping("/get-item/{itemId}")
+    public ResponseEntity<Response> getItem(@PathVariable Long itemId) {
+
+        return ResponseEntity.ok(itemService.getItemById(itemId));
     }
 
     @GetMapping("/search")

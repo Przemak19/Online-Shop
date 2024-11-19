@@ -120,6 +120,17 @@ public class ItemServiceImpl implements ItemService {
                 .itemList(itemList)
                 .build();
     }
+    @Override
+    public Response getItemByProductId(Long productId) {
+        Item item = itemRepository.findById(productId).orElseThrow(() -> new NotFoundException("Item not found"));
+
+        ItemDto itemDto = entityDtoMapper.mapItemToDtoBasic(item);
+
+        return  Response.builder()
+                .status(200)
+                .item(itemDto)
+                .build();
+    }
 
     @Override
     public Response getAllItemsByCategoryId(Long categoryId) {
