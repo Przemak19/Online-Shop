@@ -1,6 +1,7 @@
 # Online-Shop
 * [Opis](#opis)
 * [Kluczowe funkcjonalności](#kluczowe-funkcjonalności)
+* [Wykorzystanie Spring Security](#wykorzystanie-spring-security)
 * [Stos technologiczny](#stos-technologiczny)
 * [Ustawienia](#ustawienia)
 * [Wygląd aplikacji](#wygląd-aplikacji)
@@ -21,6 +22,9 @@
 <li>Panel administratora: Zarządzanie produktami, kategoriami i zamówieniami.</li>
 <li>Przechowywanie obrazów: Wydajne przechowywanie zdjęć produktów w chmurze AWS S3.</li>
 </ul>
+
+## Wykorzystanie Spring Security
+<img src="https://github.com/user-attachments/assets/5f33af0d-cac6-4ae1-97c8-092979f3d285" width="50%" height="50%"></img>
 
 ## Stos technologiczny
 <b>Backend</b>
