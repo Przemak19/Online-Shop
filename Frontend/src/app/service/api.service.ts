@@ -22,6 +22,25 @@ export class ApiService {
     })
   }
 
+  //authentication
+
+  logout():void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+  }
+
+  isAuthenticated():boolean{
+    const token = localStorage.getItem('token');
+
+    return !!token;
+  }
+
+  isAdmin():boolean {
+    const role = localStorage.getItem('role');
+
+    return role === 'ADMIN';
+  }
+
   //authorization
 
   registerUser(registration: any):Observable<any>{
@@ -136,5 +155,15 @@ export class ApiService {
         params: {status}
       })
     }
+
+    //address
+
+    saveAddress(body: any):Observable<any> {
+      return this.http.post(`${ApiService.URL}/address/save`,body, {
+        headers: this.getHeader()
+      })
+    }
+
+
 
 }

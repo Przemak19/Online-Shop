@@ -1,0 +1,97 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1a1a2e; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+nav > a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6f61; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav > a:hover {
+    color: #ff9b8f;
+}
+
+nav form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav form input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+nav form input:focus {
+    border-color: #ff6f61;
+}
+
+nav form button {
+    padding: 0.5rem 1rem;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav form button:hover {
+    background-color: #ff9b8f;
+}
+
+nav div {
+    display: flex;
+    gap: 1rem;
+}
+
+nav div a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav div a:hover {
+    color: #ff6f61;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav form {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    nav div {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    nav div a {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+}

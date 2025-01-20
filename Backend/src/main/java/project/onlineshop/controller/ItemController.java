@@ -33,7 +33,7 @@ public class ItemController {
       return ResponseEntity.ok(itemService.createItem(categoryId, image, name, description, price));
     }
 
-    @PostMapping("/update/{itemId}")
+    @PutMapping("/update/{itemId}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> createItem(@PathVariable Long itemId,
                                                @RequestParam(required = false) Long categoryId,
