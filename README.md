@@ -1,53 +1,60 @@
-Online-Shop
+# Online-Shop
+* [Opis](#opis)
+* [Kluczowe funkcjonalności](#kluczowe-funkcjonalności)
+* [Wykorzystanie Spring Security](#wykorzystanie-spring-security)
+* [Stos technologiczny](#stos-technologiczny)
+* [Ustawienia](#ustawienia)
+* [Wygląd aplikacji](#wygląd-aplikacji)
 
-Opis
-Projekt zakłada stworzenie sklepu internetowego, który umożliwi użytkownikom przeglądanie produktów, filtorwanie, dodawanie ich do koszyka oraz składanie zamówień. Projekt opiera się na nowoczesnych technologiach zapewniających wysoką wydajność, bezpieczeństwo oraz skalowalność.
+## Opis
+<details>
+<summary>Naciśnij aby zobaczyć więcej informacji o <b>Projekcie</b>!</summary>
+<b>Onlisne-Shop</b> zakłada stworzenie sklepu internetowego, który umożliwi użytkownikom przeglądanie produktów, filtorwanie, dodawanie ich do koszyka oraz składanie zamówień. Projekt opiera się na nowoczesnych technologiach zapewniających wysoką wydajność, bezpieczeństwo oraz skalowalność.
+</details>
 
-Stos technologiczny
+## Kluczowe funkcjonalności
+<b>Główne założenia projektu</b>
+<ul>
+<li>Rejestracja i logowanie użytkowników: Bezpieczne przechowywanie danych z wykorzystaniem JWT.</li>
+<li>Katalog produktów: Możliwość przeglądania, filtrowania i wyszukiwania produktów.</li>
+<li>Koszyk: Dodawanie, aktualizowanie i usuwanie produktów.</li>
+<li>Zarządzanie zamówieniami: Składanie zamówień oraz ich przeglądanie.</li>
+<li>Panel administratora: Zarządzanie produktami, kategoriami i zamówieniami.</li>
+<li>Przechowywanie obrazów: Wydajne przechowywanie zdjęć produktów w chmurze AWS S3.</li>
+</ul>
 
-Backend
+## Wykorzystanie Spring Security
+<img src="https://github.com/user-attachments/assets/5f33af0d-cac6-4ae1-97c8-092979f3d285" width="50%" height="50%"></img>
 
-Framework: Java Spring Boot
+## Stos technologiczny
+<b>Backend</b>
+<ul>
+<li>Framework: Java Spring Boot</li>
+<li>Autoryzacja i uwierzytelnianie: JSON Web Tokens (JWT)</li>
+<li>Baza danych: PostgreSQL</li>
+<li>ORM: Hibernate (JPA)</li>
+</ul>
+<b>Frontend</b>
+<ul>
+<li>Framework: Angular</li>
+</ul>
+<b>Zewnętrzne oprogramowanie</b>
+<ul>
+<li>Amazon S3: Przechowywanie plików graficznych</li>
+</ul>
 
-Autoryzacja i uwierzytelnianie: JSON Web Tokens (JWT)
+## Ustawienia
+<b>Aby uruchomić projekt lokalnie, ptrzebujesz</b>
+<ul>
+<li>Java 21+ i Spring Boot 3+</li>
+<li>Node.js i npm</li>
+<li>PostgreSQL</li>
+<li>AWS (z dostępem do konfiguracji dla S3)</li>
+</ul>
+<details>
+<summary>Naciśnij aby zobaczyć więcej informacji o <b>Ustawieniach</b>.</summary>
+<b>Konfiguracja</b>, do uruchomienia wystarczy skonfigurować application.properties (dostęp do bazy danych: url, username, password) oraz dodać secretJwtString (musi zawierać minimum 32 znaki), aws.s3.accessKey (klucz dostępu do AWS S3), aws.s3.secretKey (sekretny klucz do AWS S3). Na koniec w pliku AwsS3Service.java należy podać własną nazwę "bucketName".
+</details>
 
-Baza danych: PostgreSQL
+## Wygląd aplikacji
 
-ORM: Hibernate (JPA)
-
-Frontend
-
-Framework: Angular
-
-Przechowywanie danych
-
-Zdjęcia produktów: Amazon S3
-
-
-Kluczowe funkcjonalności
-
-Rejestracja i logowanie użytkowników: Bezpieczne przechowywanie danych z wykorzystaniem JWT.
-
-Katalog produktów: Możliwość przeglądania, filtrowania i wyszukiwania produktów.
-
-Koszyk: Dodawanie, aktualizowanie i usuwanie produktów.
-
-Zarządzanie zamówieniami: Składanie zamówień oraz ich przeglądanie.
-
-Panel administratora: Zarządzanie produktami, kategoriami i zamówieniami.
-
-Przechowywanie obrazów: Wydajne przechowywanie zdjęć produktów w chmurze AWS S3.
-
-Wymagania wstępne
-
-Aby uruchomić projekt lokalnie, ptrzebujesz:
-
-Java 21+ i Spring Boot 3+
-
-Node.js i npm
-
-PostgreSQL
-
-AWS (z dostępem do konfiguracji dla S3)
-
-Do uruchomienia wystarczy skonfigurować application.properties oraz dodać secretJwtString, aws.s3.accessKey, aws.s3.secretKey.
