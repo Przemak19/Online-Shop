@@ -3,21 +3,21 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #1a1a2e; 
+    background-color: #ac9d90; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: #ffffff;
+    color: #ecf0f1; 
 }
 
 nav > a {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ff6f61; 
+    color: #e74c3c; 
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 nav > a:hover {
-    color: #ff9b8f;
+    color: #c0392b; 
 }
 
 nav form {
@@ -28,30 +28,31 @@ nav form {
 
 nav form input {
     padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #bdc3c7;
     border-radius: 4px;
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav form input:focus {
-    border-color: #ff6f61;
+    border-color: #e74c3c;
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
 }
 
 nav form button {
     padding: 0.5rem 1rem;
-    background-color: #ff6f61;
+    background-color: #e74c3c;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: #fff;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 nav form button:hover {
-    background-color: #ff9b8f;
+    background-color: #c0392b;
 }
 
 nav div {
@@ -60,38 +61,57 @@ nav div {
 }
 
 nav div a {
-    color: white;
+    color: #ecf0f1;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 nav div a:hover {
-    color: #ff6f61;
+    color: #e74c3c;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ecf0f1;
+    background: none;
+    border: none;
 }
 
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         align-items: flex-start;
+        padding: 1rem;
     }
 
-    nav form {
-        width: 100%;
-        margin: 1rem 0;
+    .menu-toggle {
+        display: block;
+        margin-bottom: 1rem;
     }
 
     nav div {
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
+        display: none; 
     }
 
     nav div a {
         width: 100%;
         text-align: center;
         padding: 0.5rem 0;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(236, 240, 241, 0.1);
         border-radius: 4px;
     }
+
+    nav div.active {
+        display: flex; 
+    }
+}
+
+nav div {
+    transition: all 0.3s ease;
 }
