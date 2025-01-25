@@ -1,0 +1,7 @@
+<div class="home-page">
+    <p *ngIf="error" class="error">{{error}}</p>
+    <div *ngIf="!error">
+        <app-itemlist [items]="items"></app-itemlist>
+        <app-pagination [currentPage]="currentPage" [totalPage]="totalPages" (pageChange)="changePage($event)"></app-pagination>
+    </div>
+</div>

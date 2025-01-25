@@ -1,10 +1,11 @@
 <nav>
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
     <a routerLink="/">HOUGERU</a>
     <form (submit)="handleSearchSubmit()">
         <input type="text" placeholder="Search products ..." name="searchValue" [(ngModel)]="searchValue">
         <button type="submit">Search</button>
     </form>
-    <div>
+    <div [class.active]="menuOpen">
         <a routerLink="/">Home</a>
         <a routerLink="/category">Category</a>
         <a routerLink="/basket">Basket</a>

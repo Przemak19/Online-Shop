@@ -96,7 +96,11 @@ nav div a:hover {
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
-        display: none; 
+        display: none;
+    }
+
+    nav div.active {
+        display: flex;
     }
 
     nav div a {
@@ -106,12 +110,4 @@ nav div a:hover {
         background-color: rgba(236, 240, 241, 0.1);
         border-radius: 4px;
     }
-
-    nav div.active {
-        display: flex; 
-    }
-}
-
-nav div {
-    transition: all 0.3s ease;
 }

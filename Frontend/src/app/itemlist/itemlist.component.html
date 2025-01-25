@@ -1,1 +1,20 @@
-<p>itemlist works!</p>
+<div class = "item-list">
+    <div *ngFor="let item of items" class="item-of-items">
+        <div (click)="changeToItemDetails(item.id)">
+            <img [src] = "item.imageUrl" [alt] = "item.name">
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
+            <span>{{item.price.toFixed(2) | currency}}</span>
+        </div>
+         <ng-container *ngIf="isInBasket(item); else addToBasketButton">
+            <div>
+                <button class="decrement-button">-</button>
+                <span>{{getBasketItem(item)?.quantity}}</span>
+                <button class="increment-button">+</button>
+            </div>
+         </ng-container>
+         <ng-template #addToBasketButton>
+            <button class="buy-button" (click)="addToBasket(item)">Buy it</button>
+         </ng-template>
+    </div>
+</div>

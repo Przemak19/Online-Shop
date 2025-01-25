@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(private readonly apiService: ApiService, private router: Router){}
 
+  menuOpen: boolean = false;
+
   isAdmin: boolean = false;
   isAuthenticated: boolean = false;
   searchValue: string = '';
@@ -30,6 +32,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.isAdmin = this.apiService.isAdmin();
       })
   }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+}
 
   handleSearchSubmit() {
     this.router.navigate(['/home'], {queryParams: {search: this.searchValue}});
