@@ -2,7 +2,12 @@
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
     <a routerLink="/">HOUGERU</a>
     <form (submit)="handleSearchSubmit()">
-        <input type="text" placeholder="Search products ..." name="searchValue" [(ngModel)]="searchValue">
+        <input 
+        type="text" 
+        name="searchValue" 
+        [(ngModel)]="searchValue" 
+        [placeholder]="searchValue !== '' ? searchValue : 'Search products ...'"
+      />
         <button type="submit">Search</button>
     </form>
     <div [class.active]="menuOpen">

@@ -31,6 +31,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.isAuthenticated = this.apiService.isAuthenticated();
         this.isAdmin = this.apiService.isAdmin();
       })
+
+      const savedSearchValue = localStorage.getItem('searchValue');
+      if (savedSearchValue) {
+        this.searchValue = savedSearchValue;
+      }
   }
 
   toggleMenu() {
@@ -38,6 +43,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 }
 
   handleSearchSubmit() {
+    localStorage.setItem('searchValue', this.searchValue);
     this.router.navigate(['/home'], {queryParams: {search: this.searchValue}});
   }
 

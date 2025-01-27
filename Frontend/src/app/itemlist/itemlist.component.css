@@ -16,6 +16,7 @@ body {
 }
 
 .item-of-items {
+    max-width: 250px;
     background: #ffffff; 
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
