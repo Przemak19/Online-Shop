@@ -122,13 +122,13 @@
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .login-page {
-        padding: 1.5rem;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    .login-form button {
-        font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

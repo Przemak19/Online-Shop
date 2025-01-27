@@ -61,18 +61,4 @@
     }
 }
 
-@media (max-width: 768px) {
-    .home-page {
-        padding: 1.5rem;
-    }
 
-    .home-page .error {
-        font-size: 1rem;
-        padding: 0.8rem;
-    }
-
-    .home-page app-pagination {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-}
