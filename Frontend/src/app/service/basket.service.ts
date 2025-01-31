@@ -35,7 +35,7 @@ export class BasketService {
 
   removeItem(itemId:number) {
     this.basket = this.basket.filter(item => item.id !== itemId);
-    this.saveBasket;
+    this.saveBasket();
   }
 
   incrementItem(itemId: number) {

@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit{
   items: any[] = [];
   currentPage: number = 1;
   totalPages = 0;
-  itemsPerPage = 5;
+  itemsPerPage = 10;
   error: any = null;
   
   ngOnInit(): void {
