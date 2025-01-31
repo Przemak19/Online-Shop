@@ -1,0 +1,25 @@
+<div class="item-details" *ngIf="item; else load">
+    <div class="left-column">
+        <h2>{{item?.name}}</h2>
+        <img [src]="item?.imageUrl" [alt]="item?.name" />
+        <p class="description">{{item?.description}}</p>
+    </div>
+    <div class="right-column">
+        <div class="content">
+            <span class="price">Product price: {{item?.price.toFixed(2) | currency}}</span>
+            <ng-container *ngIf="basketItem; else addToBasketButton">
+                <div class="quantity-buttons">
+                    <button class="decrement-button" (click)="decrementItem()">-</button>
+                    <span>{{basketItem?.quantity}}</span>
+                    <button class="increment-button" (click)="incrementItem()">+</button>
+                </div>
+            </ng-container>
+            <ng-template #addToBasketButton>
+                <button class="buy-button" (click)="addToBasket()">Buy it</button>
+            </ng-template>
+        </div>
+    </div>
+</div>
+<ng-template #load class="loading">
+    <p>Loading ...</p>
+</ng-template>
