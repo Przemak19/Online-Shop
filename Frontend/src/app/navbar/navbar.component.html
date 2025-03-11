@@ -12,7 +12,7 @@
     </form>
     <div [class.active]="menuOpen">
         <a routerLink="/">Home</a>
-        <a routerLink="/category">Category</a>
+        <a routerLink="/categories">Category</a>
         <a routerLink="/basket">Basket</a>
         <a *ngIf="isAuthenticated" routerLink="/account">Account</a>
         <a *ngIf="isAuthenticated && isAdmin" routerLink="/admin">Admin</a>
