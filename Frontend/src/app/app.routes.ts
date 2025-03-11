@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryItemsComponent } from './category-items/category-items.component';
+import { BasketComponent } from './basket/basket.component';
 
 export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
@@ -13,6 +14,7 @@ export const routes: Routes = [
     {path: 'item/:itemId', component: ItemdetailsComponent},
     {path: 'categories', component: CategoryComponent},
     {path: 'items/:categoryId', component: CategoryItemsComponent},
+    {path: 'basket', component: BasketComponent},
 
     
     {path: '', redirectTo: '/home', pathMatch: 'full'},

@@ -1,0 +1,116 @@
+.basket {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.basket h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.message {
+    color: #27ae60;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.empty-basket {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.decrement-button, .increment-button, .buy-button, .clear-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+}
+
+.decrement-button, .increment-button {
+    background: #ff9b8f;
+    color: #fff;
+}
+
+.decrement-button:hover, .increment-button:hover {
+    background-color: #ff6f61;
+}
+
+.buy-button {
+    background: #27ae60;
+    color: #fff;
+    margin: 1rem;
+}
+
+.buy-button:hover {
+    background: #219150;
+}
+
+.clear-button {
+    background: #e74c3c;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.clear-button:hover {
+    background: #c0392b;
+}
