@@ -6,6 +6,7 @@ import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryItemsComponent } from './category-items/category-items.component';
 import { BasketComponent } from './basket/basket.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path: 'items/:categoryId', component: CategoryItemsComponent},
     {path: 'basket', component: BasketComponent},
 
+    {path: 'account', component: ProfileComponent},
     
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'},
