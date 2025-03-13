@@ -7,6 +7,7 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryItemsComponent } from './category-items/category-items.component';
 import { BasketComponent } from './basket/basket.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddressComponent } from './address/address.component';
 
 export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
@@ -18,6 +19,8 @@ export const routes: Routes = [
     {path: 'basket', component: BasketComponent},
 
     {path: 'account', component: ProfileComponent},
+    {path: 'add-address', component: AddressComponent},
+    {path: 'edit-address', component: AddressComponent},
     
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'},
