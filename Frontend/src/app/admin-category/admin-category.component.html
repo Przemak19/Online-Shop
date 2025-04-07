@@ -1,0 +1,23 @@
+<div class="admin-category">
+    <div class="main-top">
+        <div class="header-title">
+          <h2>Manage categories</h2>
+        </div>
+        <div class="new-cat-button">
+          <button (click)="handleAddCategory()">Add new category</button>
+        </div>
+      </div>
+     <div class="category-list">
+        <div>
+              <ul *ngFor="let category of categories">
+                  <li>
+                       <span>{{category.name}}</span>
+                       <div class="category-buttons">
+                            <button class="cat-button" id="edit" (click)="handleEdit(category.id)">Edit</button>
+                            <button class="cat-button" id="delete" (click)="handleDelete(category.id)">Delete</button>
+                       </div>
+                 </li>
+            </ul>
+        </div>
+     </div>
+</div>
