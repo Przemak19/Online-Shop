@@ -1,0 +1,18 @@
+<div class="add-category">
+    <div class="main-top">
+        <div class="back-button">
+            <button (click)="handleBack()">Back</button>
+        </div>
+        <div classs="header-title">
+            <h2>Add new category</h2>
+        </div>
+    </div>
+    <p *ngIf="message">{{message}}</p>
+    <div>
+        <form [formGroup]="categoryForm" (ngSubmit)="handleSubmit()">
+            <label for="category-name">New category:</label>
+            <input type="text" placeholder="Category name" formControlName="name" [class.invalid]="categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
