@@ -9,6 +9,7 @@ import { BasketComponent } from './basket/basket.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
 import { AdminComponent } from './admin/admin.component';
+import { adminGuard, userGuard } from './service/guard.service';
 
 export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
@@ -19,10 +20,11 @@ export const routes: Routes = [
     {path: 'items/:categoryId', component: CategoryItemsComponent},
     {path: 'basket', component: BasketComponent},
 
-    {path: 'account', component: ProfileComponent},
-    {path: 'admin', component: AdminComponent},
-    {path: 'add-address', component: AddressComponent},
-    {path: 'edit-address', component: AddressComponent},
+    {path: 'account', component: ProfileComponent, canActivate:[userGuard]},
+    {path: 'add-address', component: AddressComponent, canActivate:[userGuard]},
+    {path: 'edit-address', component: AddressComponent, canActivate:[userGuard]},
+
+    {path: 'admin', component: AdminComponent, canActivate: [adminGuard]},
     
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'},
