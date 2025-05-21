@@ -13,6 +13,7 @@ import { adminGuard, userGuard } from './service/guard.service';
 import { AdminCategoryComponent } from './admin-category/admin-category.component';
 import { AdminAddcategoryComponent } from './admin-addcategory/admin-addcategory.component';
 import { AdminEditcategoryComponent } from './admin-editcategory/admin-editcategory.component';
+import { AdminProductComponent } from './admin-item/admin-item.component';
 
 export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
@@ -31,6 +32,7 @@ export const routes: Routes = [
     {path: 'admin/categories', component: AdminCategoryComponent, canActivate: [adminGuard]},
     {path: 'admin/add-category', component: AdminAddcategoryComponent, canActivate: [adminGuard]},
     {path: 'admin/edit-category/:categoryId', component: AdminEditcategoryComponent, canActivate: [adminGuard]},
+    {path: 'admin/items', component: AdminProductComponent, canActivate: [adminGuard]},
     
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'},

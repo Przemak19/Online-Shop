@@ -1,0 +1,22 @@
+<div class="admin-items">
+    <div class="header-title">
+        <h2>Manage products</h2>
+    </div>
+    <button (click)="handleAdd()" class="new-item-button">Add item</button>
+    <p *ngIf="error" class="error">{{error}}</p>
+    <div *ngIf="!error" class="item-list">
+        <div class="main-top">
+            <ul>
+                <li *ngFor="let item of items" class="item-of-items">
+                    <span>{{'ID: ' + item.id}}</span>
+                    <span>{{item.name}}</span>
+                    <div class="item-buttons">
+                        <button (click)="handleEdit(item.id)" class="item-bt">Edit</button>
+                        <button (click)="handleDelete(item.id)" class="item-bt">Delete</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <app-pagination [currentPage]="currentPage" [totalPage]="totalPages" (pageChange)="OnPageChange($event)"></app-pagination>
+    </div>
+</div>
