@@ -71,6 +71,7 @@ export class AdminProductComponent implements OnInit {
     if(confirm) {
       this.apiService.deleteItem(id).subscribe({
         next: (response) => {
+          console.log('halo');
           this.fetchItems();
         },
         error: (error) => {

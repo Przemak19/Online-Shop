@@ -91,7 +91,9 @@ export class ApiService {
   }
 
   deleteItem(itemId: string): Observable<any> {
-    return this.http.delete(`${ApiService.URL}/item/delete/${itemId}`);
+    return this.http.delete(`${ApiService.URL}/item/delete/${itemId}`, {
+        headers: this.getHeader()
+      })
   }
 
     //categories
