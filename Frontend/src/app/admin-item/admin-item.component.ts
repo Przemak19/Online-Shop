@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../service/api.service';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router'
+import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-admin-product',
+  selector: 'app-admin-item',
   standalone: true,
   imports: [PaginationComponent, CommonModule],
   templateUrl: './admin-item.component.html',
   styleUrl: './admin-item.component.css'
 })
-export class AdminProductComponent implements OnInit {
+export class AdminItemComponent implements OnInit {
 
   items: any[] = [];
   currentPage: number = 1;
@@ -59,6 +59,7 @@ export class AdminProductComponent implements OnInit {
 
   handleAdd(): void {
     this.router.navigate([`/admin/add-item`]);
+    console.log('e gosciu');
   }
 
   handleEdit(productId: string): void {

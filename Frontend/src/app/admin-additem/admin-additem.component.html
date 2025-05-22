@@ -1,0 +1,35 @@
+<div class="add-item">
+    <div class="main-top">
+        <div class="back-button">
+            <button (click)="handleBack()">Back</button>
+        </div>
+        <div classs="header-title">
+            <h2>Add new item</h2>
+        </div>
+    </div>
+    <p class="message" *ngIf="message">{{message}}</p>
+    <div>
+        <form (submit)="handleSubmit()">
+            <label for="item-name">Name:</label>
+            <input type="text" placeholder="Item name" [(ngModel)]="name" name="name" required="">
+            <label for="item-description">Description:</label>
+            <textarea placeholder="Item description" [(ngModel)]="description" name="description" required=""></textarea>
+            <label for="item-image">Image:</label>
+            <input type="file" (change)="handleImgae($event)">
+            <label for="item-category">Category:</label>
+            <select [(ngModel)]="categoryId" name="category" required="">
+                <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+            </select>
+            <label for="item-price">Price:</label>
+            <input type="number" 
+                   placeholder="Item price" 
+                   [(ngModel)]="price" 
+                   name="price" 
+                   required
+                   step="0.01"
+                   min="0"
+                   (keypress)="validatePriceInput($event)">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
