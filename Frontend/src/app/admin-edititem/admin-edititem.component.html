@@ -1,1 +1,24 @@
-<p>admin-edititem works!</p>
+<form [formGroup]="editItemForm" (ngSubmit)="handleSubmit()">
+    <h2>Edit item: {{name}}</h2>
+    <p id="message" *ngIf="message">{{message}}</p>
+
+    <label for="Image">Image</label>
+    <input type="file" (change)="handleImageChange($event)">
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="name">
+
+    <label for="Category">Category</label>
+    <select formControlName="categoryId">
+        <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+    </select>
+
+    <label for="Name">Name</label>
+    <input formControlName="name" type="text" placeholder="Item name">
+
+    <label for="Description">Description</label>
+    <textarea formControlName="description" type="text" placeholder="Item description"></textarea>
+
+    <label for="Price">Price</label>
+    <input formControlName="price" type="number" placeholder="Item price">
+
+    <button type="submit">Update Item</button>
+</form>

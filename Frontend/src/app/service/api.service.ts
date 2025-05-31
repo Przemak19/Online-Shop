@@ -67,7 +67,7 @@ export class ApiService {
   }
 
   updateItem(itemId: string, formData: any): Observable<any> {
-    return this.http.post(`${ApiService.URL}/item/update/${itemId}`, formData, {
+    return this.http.put(`${ApiService.URL}/item/update/${itemId}`, formData, {
       headers: this.getHeader()
     });
   }

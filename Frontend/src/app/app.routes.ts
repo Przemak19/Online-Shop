@@ -15,6 +15,7 @@ import { AdminAddcategoryComponent } from './admin-addcategory/admin-addcategory
 import { AdminEditcategoryComponent } from './admin-editcategory/admin-editcategory.component';
 import { AdminItemComponent } from './admin-item/admin-item.component'
 import { AdminAdditemComponent } from './admin-additem/admin-additem.component'
+import { AdminEdititemComponent } from './admin-edititem/admin-edititem.component';
 
 export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
@@ -35,6 +36,7 @@ export const routes: Routes = [
     {path: 'admin/edit-category/:categoryId', component: AdminEditcategoryComponent, canActivate: [adminGuard]},
     {path: 'admin/items', component: AdminItemComponent, canActivate: [adminGuard]},
     {path: 'admin/add-item', component: AdminAdditemComponent, canActivate: [adminGuard]},
+    {path: 'admin/edit-item/:itemId', component: AdminEdititemComponent, canActivate: [adminGuard]},
     
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'},

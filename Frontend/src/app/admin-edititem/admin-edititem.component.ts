@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
-import { errorContext } from 'rxjs/internal/util/errorContext';
 
 @Component({
   selector: 'app-admin-edititem',
@@ -19,6 +18,7 @@ export class AdminEdititemComponent implements OnInit{
   message: any = null;
   imageUrl: any = null;
   itemId: string = '';
+  name: string = '';
 
   constructor(private apiService: ApiService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) {}
 
@@ -51,6 +51,7 @@ export class AdminEdititemComponent implements OnInit{
               price: res.item.price
             });
             this.imageUrl = res.item.imageUrl;
+            this.name = res.item.name;
           }
         })
       }
@@ -81,7 +82,7 @@ export class AdminEdititemComponent implements OnInit{
     if(formValues.image) {
       formData.append('image', formValues.image);
     }
-    formData.append('categoryId', formValues.categoryId);
+    formData.append('categoryId', formValues.categoryId ? String(formValues.categoryId) : '');
     formData.append('name', formValues.name);
     formData.append('description', formValues.description);
     formData.append('price', formValues.price);
