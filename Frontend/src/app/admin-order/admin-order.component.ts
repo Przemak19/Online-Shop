@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from "../pagination/pagination.component";
 
 @Component({
   selector: 'app-admin-order',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, PaginationComponent],
   templateUrl: './admin-order.component.html',
   styleUrl: './admin-order.component.css'
 })
@@ -15,11 +17,10 @@ export class AdminOrderComponent implements OnInit{
   orders: any[] = [];
   filterOrders: any[] = [];
   statusFilter: string = '';
-  searchStatus: string = '';
 
   currentPage: number = 1;
   totalPages: number = 0;
-  itemPerPage: number = 10;
+  itemPerPage: number = 5;
 
   error: any = null;
 
@@ -32,7 +33,7 @@ export class AdminOrderComponent implements OnInit{
   }
 
   fetchOrders(): void {
-    const orderObservable = this.searchStatus ? this.apiService.getOrderItemsByStatus(this.searchStatus) : this.apiService.getAllOrders();
+    const orderObservable = this.statusFilter ? this.apiService.getOrderItemsByStatus(this.statusFilter) : this.apiService.getAllOrders();
 
     orderObservable.subscribe({
       next: (res) => {
@@ -69,16 +70,13 @@ export class AdminOrderComponent implements OnInit{
     }
   }
 
-  handleSearchStatusChange(): void {
-    this.currentPage = 1;
-    this.fetchOrders();
-  }
-
   changePage(page: number): void { 
     this.currentPage = page;
-    this.filterOrders = this.orders.slice((this.currentPage - 1) * this.itemPerPage, this.itemPerPage * this.itemPerPage);
+    this.filterOrders = this.orders.slice((this.currentPage - 1) * this.itemPerPage, this.currentPage * this.itemPerPage);
   }
 
-  
+  navToOrderDetails(id: number) {
+    this.router.navigate([`/admin/order-details/${id}`]);
+  }
 
 }

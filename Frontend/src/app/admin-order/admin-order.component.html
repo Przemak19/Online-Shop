@@ -1,1 +1,40 @@
-<p>admin-order works!</p>
+<div id="order-page">
+    <header>
+        <h2>Orders</h2>
+        <p *ngIf="error">{{error}}</p>
+        <div id="filter-con">
+            <label>Filter by status</label>
+            <select [(ngModel)]="statusFilter" (change)="handleFilterChange()">
+                <option value="">All</option>
+                <option *ngFor="let status of orderStatus" [value]="status">{{status}}</option>
+            </select>
+        </div>
+    </header>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Price</th>
+                    <th>Order Date</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of filterOrders">
+                    <td>{{order.id}}</td>
+                    <td>{{order.user.name}}</td>
+                    <td>{{order.status}}</td>
+                    <td>{{order.price.toFixed(2)}}</td>
+                    <td>{{order.created | date: 'dd/MM/yyyy'}}</td>
+                    <td>
+                        <button (click)="navToOrderDetails(order.id)"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <app-pagination [currentPage]="currentPage" [totalPage]="totalPages" (pageChange)="changePage($event)"></app-pagination>
+    </body>
+</div>
