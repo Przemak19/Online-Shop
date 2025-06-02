@@ -17,6 +17,7 @@ import { AdminItemComponent } from './admin-item/admin-item.component'
 import { AdminAdditemComponent } from './admin-additem/admin-additem.component'
 import { AdminEdititemComponent } from './admin-edititem/admin-edititem.component';
 import { AdminOrderComponent } from './admin-order/admin-order.component';
+import { AdminOrderdetailsComponent } from './admin-orderdetails/admin-orderdetails.component';
 
 export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
@@ -39,6 +40,7 @@ export const routes: Routes = [
     {path: 'admin/add-item', component: AdminAdditemComponent, canActivate: [adminGuard]},
     {path: 'admin/edit-item/:itemId', component: AdminEdititemComponent, canActivate: [adminGuard]},
     {path: 'admin/orders', component: AdminOrderComponent, canActivate: [adminGuard]},
+    {path: 'admin/order-details/:orderId', component: AdminOrderdetailsComponent, canActivate: [adminGuard]},
     
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'},

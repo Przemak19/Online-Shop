@@ -1,0 +1,50 @@
+<div id="order-details">
+    <header>
+        <h2>Order Details</h2>
+        <p *ngIf="message">{{message}}</p>
+    </header>
+    <body>
+        <ng-container *ngIf="orderItem; else loading">
+            <div *ngFor="let item of orderItem" class="item-details">
+                <div class="info">
+                    <h2>Order Information</h2>
+                    <p><strong>ID:</strong>{{item.id}}</p>
+                    <p><strong>Quantity:</strong>{{item.quantity}}</p>
+                    <p><strong>Total price:</strong>{{item.price}}</p>
+                    <p><strong>Order status:</strong>{{item.status}}</p>
+                    <p><strong>Order date:</strong>{{item.created | date: 'dd/MM/yyyy'}}</p>
+                </div>
+                <div class="info">
+                    <h2>User Information</h2>
+                    <p><strong>Username:</strong>{{item.user.username}}</p>
+                    <p><strong>Email:</strong>{{item.user.email}}</p>
+                    <p><strong>Role:</strong>{{item.user.role}}</p>
+                </div>
+                <div class="info">
+                    <h2>User Address Information</h2>
+                    <p><strong>Country:</strong>{{item.user.address?.country}}</p>
+                    <p><strong>Zipcode:</strong>{{item.user.address?.zipcode}}</p>
+                    <p><strong>City:</strong>{{item.user.address?.city}}</p>
+                    <p><strong>Street:</strong>{{item.user.address?.street}}</p>
+                </div>
+                <div class="info">
+                    <h2>Product Information</h2>
+                    <img [src]="item.item?.imageUrl" [alt]="item.item?.name">
+                    <p><strong>Name:</strong>{{item.item?.name}}</p>
+                    <p><strong>Description:</strong>{{item.item?.description}}</p>
+                    <p><strong>Price:</strong>{{item.item?.price}}</p>
+                </div>
+                <div class="status-container">
+                    <h3>Change Status</h3>
+                    <select [(ngModel)]="selectedStatus[item.id]">
+                        <option *ngFor="let status of orderStatus" [value]="status">{{status}}</option>
+                    </select>
+                    <button (click)="handleSubmit(orderId)">Submit</button>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #loading>
+            <p>Loading item details ...</p>
+        </ng-template>
+    </body>
+</div>
