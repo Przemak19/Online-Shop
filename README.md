@@ -57,4 +57,50 @@
 </details>
 
 ## Wygląd aplikacji
+<h4><strong>Panel logowania i rejestracji</strong></h4>
+<img src="https://github.com/user-attachments/assets/f405b9f7-a024-448f-822d-48cbedb240a4" width="500px" height="250px"></img>
+<img src="https://github.com/user-attachments/assets/cd306006-2bd3-49e0-9a47-9efa87264e8e" width="500px" height="250px"></img>
+
+<h4><strong>Panel główny</strong></h4>
+<img src="https://github.com/user-attachments/assets/13a66019-6063-4d73-b3e6-bb319ed490ff" width="500px" height="250px"></img>
+<img src="https://github.com/user-attachments/assets/da526cc8-00e1-47b5-9b33-428117a4d228" width="500px" height="250px"></img>
+
+<h4><strong>Szczegóły produktu</strong></h4>
+<img src="https://github.com/user-attachments/assets/72488989-f286-4be6-b8d1-26919fc0aeb2" width="500px" height="250px"></img>
+
+<h4><strong>Aktualnie dostępne kategorie</strong></h4>
+<img src="https://github.com/user-attachments/assets/e765b1d6-737b-4397-907e-589b4a2b451e" width="500px" height="250px"></img>
+
+<h4><strong>Koszyk z zakupami</strong></h4>
+<img src="https://github.com/user-attachments/assets/e8035739-8b35-4a8d-be24-1edeca8d23e9" width="500px" height="250px"></img>
+
+<h4><strong>Profil użytkownika i historia zamówień</strong></h4>
+<img src="https://github.com/user-attachments/assets/bdccc6e0-289f-4b04-a862-a3d5d7df7e1a" width="500px" height="250px"></img>
+
+<h4><strong>Panel edycji adresu użytkownika</strong></h4>
+<img src="https://github.com/user-attachments/assets/b4acf82d-6d6d-4ebb-a9ec-bb2af1c693c4" width="500px" height="250px"></img>
+
+<h4><strong>Panel administratora do zarządzania</strong></h4>
+<img src="https://github.com/user-attachments/assets/67f38dbe-b344-4ac9-988f-226a54520242" width="500px" height="250px"></img>
+
+<h4><strong>Panel administratora do zarządzania kategoriami</strong></h4>
+<img src="https://github.com/user-attachments/assets/aae9308e-4a51-49d2-b119-9b561fe8cac4" width="500px" height="250px"></img>
+
+<h4><strong>Dodawanie i edycja kategorii</strong></h4>
+<img src="https://github.com/user-attachments/assets/ebad5e84-9690-47a7-87fd-f8673e05ea61" width="500px" height="200px"></img>
+<img src="https://github.com/user-attachments/assets/4a57eb60-f506-4a96-a55f-52f38e5a6472" width="500px" height="200px"></img>
+
+<h4><strong>Panel administratora do zarządzania produktami</strong></h4>
+<img src="https://github.com/user-attachments/assets/ab571f1c-db12-4fda-937a-dc2807fa37aa" width="500px" height="250px"></img>
+
+<h4><strong>Dodawanie i edycja produktów</strong></h4>
+<img src="https://github.com/user-attachments/assets/207ecf87-0ab1-4c8c-a516-0f340314bc77" width="500px" height="250px"></img>
+<img src="https://github.com/user-attachments/assets/4054a850-1c4b-47d8-a682-3731eed86b4e" width="500px" height="250px"></img>
+
+<h4><strong>Panel administratora do filtrowania i zarządzania zamówieniami</strong></h4>
+<img src="https://github.com/user-attachments/assets/db08df6f-0865-43e5-8717-c313b851a8d8" width="500px" height="250px"></img>
+<img src="https://github.com/user-attachments/assets/0136d775-a0ff-420e-be53-fb5c4983238a" width="500px" height="150px"></img>
+
+<h4><strong>Panel podglądu i edycji statusu zamówienia</strong></h4>
+<img src="https://github.com/user-attachments/assets/f092153a-181f-40d2-8e1f-34c9408802c7" width="500px" height="250px"></img>
 
