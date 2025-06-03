@@ -70,7 +70,7 @@ export class AdminAdditemComponent implements OnInit{
   }
 
   handleBack(): void {
-    this.router.navigate(['/admin/categories']);
+    this.router.navigate(['/admin/items']);
   }
 
   validatePriceInput(event: KeyboardEvent) {
