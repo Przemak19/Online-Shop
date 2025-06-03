@@ -152,8 +152,8 @@ export class ApiService {
       })
     }
 
-    updateOrderItemStatus(orderItemId: string, status: string): Observable<any> {
-      return this.http.put(`${ApiService.URL}/order/update-status/${orderItemId}`, {
+    updateOrderItemStatus(orderItemId: number, status: string): Observable<any> {
+      return this.http.put(`${ApiService.URL}/order/update-status/${orderItemId}`, null, {
         headers: this.getHeader(),
         params: {status}
       })

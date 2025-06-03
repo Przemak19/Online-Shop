@@ -14,8 +14,8 @@ import { FormsModule } from '@angular/forms';
 export class AdminOrderdetailsComponent implements OnInit{
 
   orderItem: any[] = [];
-  selectedStatus: {[key: number]: string} = {}
-  orderId: any = ''
+  selectedStatus: {[key: number]: string} = {};
+  orderItemId: any = '';
 
   message: any = null;
 
@@ -24,12 +24,12 @@ export class AdminOrderdetailsComponent implements OnInit{
   constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-      this.orderId = this.route.snapshot.paramMap.get('orderId');
+      this.orderItemId = this.route.snapshot.paramMap.get('orderItemId');
       this.fetchOrderDetails();
   }
 
   fetchOrderDetails(): void {
-    this.apiService.getOrderItemById(this.orderId).subscribe({
+    this.apiService.getOrderItemById(this.orderItemId).subscribe({
       next: (res) => {
         this.orderItem = res.orderItemList || [];
         this.orderItem.forEach(item => {
@@ -48,13 +48,13 @@ export class AdminOrderdetailsComponent implements OnInit{
 
   handleSubmit(orderId: number): void {
     
-    this.apiService.updateOrderItemStatus(orderId.toString(), this.selectedStatus[orderId]).subscribe({
+    this.apiService.updateOrderItemStatus(orderId, this.selectedStatus[orderId]).subscribe({
       next: (res) => {
         this.fetchOrderDetails();
         this.message = 'Order sucessully updated';
         setTimeout(() => {
           this.message = null;
-
+          this.router.navigate([`/admin/orders`]);
         }, 3000);
       }
     })

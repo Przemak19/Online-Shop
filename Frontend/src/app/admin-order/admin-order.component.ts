@@ -75,8 +75,8 @@ export class AdminOrderComponent implements OnInit{
     this.filterOrders = this.orders.slice((this.currentPage - 1) * this.itemPerPage, this.currentPage * this.itemPerPage);
   }
 
-  navToOrderDetails(id: number) {
-    this.router.navigate([`/admin/order-details/${id}`]);
+  navToOrderDetails(orderItemId: number) {
+    this.router.navigate([`/admin/order-details/${orderItemId}`]);
   }
 
 }

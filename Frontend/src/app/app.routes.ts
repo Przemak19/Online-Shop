@@ -40,7 +40,7 @@ export const routes: Routes = [
     {path: 'admin/add-item', component: AdminAdditemComponent, canActivate: [adminGuard]},
     {path: 'admin/edit-item/:itemId', component: AdminEdititemComponent, canActivate: [adminGuard]},
     {path: 'admin/orders', component: AdminOrderComponent, canActivate: [adminGuard]},
-    {path: 'admin/order-details/:orderId', component: AdminOrderdetailsComponent, canActivate: [adminGuard]},
+    {path: 'admin/order-details/:orderItemId', component: AdminOrderdetailsComponent, canActivate: [adminGuard]},
     
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'},

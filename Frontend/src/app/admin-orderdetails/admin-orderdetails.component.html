@@ -39,7 +39,7 @@
                     <select [(ngModel)]="selectedStatus[item.id]">
                         <option *ngFor="let status of orderStatus" [value]="status">{{status}}</option>
                     </select>
-                    <button (click)="handleSubmit(orderId)">Submit</button>
+                    <button (click)="handleSubmit(item.id)">Submit</button>
                 </div>
             </div>
         </ng-container>
